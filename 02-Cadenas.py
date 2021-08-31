@@ -75,8 +75,61 @@ print (frase.replace(vocal, vocal.upper()))
 '''    
 
 # Escribir un programa que pregunte el correo electrónico del usuario en la consola y muestre por pantalla otro
-# correo electrónico con el mismo nombre (la parte delante de la arroba @) pero con dominio ceu.es.
+# correo electrónico con el mismo nombre (la parte delante de la arroba @) pero con dominio ceu.es
+
+'''
 
 mail = input ('Ingrese su correo electrónico: ')
-mail = list(mail)
+cortado = mail.split(" ")[-1].split("@")[0]
 
+print (f'{cortado}@ceu.es')
+
+cor = mail[:mail.find('@')] # Otra forma de resolverlo
+
+print (f'{cor}@ceu.es')
+
+'''
+
+# Escribir un programa que pregunte por consola el precio de un producto en euros con dos decimales y muestre
+# por pantalla el número de euros y el número de céntimos del precio introducido.
+
+'''
+
+precio = input ('Introduzca el precio del producto con dos decimales: ')
+e = precio[:precio.find('.')] # Los dos puntos al principio para que vaya desde el principio hasta el punto marcado
+c = precio[precio.find('.')+1:] # Los dos puntos a lo último para que vaya desde el punto marcado hasta el final (el '+1' sirve para que imprima un caracter después del punto marcado)
+
+print (f'{e} euros y {c} céntimos.')
+
+'''
+
+# Escribir un programa que pregunte al usuario la fecha de su nacimiento en formato dd/mm/aaaa y muestra por
+# pantalla, el día, el mes y el año. Adaptar el programa anterior para que también funcione cuando el día o el
+# mes se introduzcan con un solo carácter.
+
+'''
+
+fecha = input ('Escriba su fecha de nacimiento: ')
+
+d = fecha[:fecha.find('/')]
+m1 = fecha[fecha.find('/')+1:]
+m = m1[:m1.find('/')]
+a = m1[m1.find('/')+1:]
+
+print (f'Día: {d}') 
+print (f'Mes: {m}')
+print (f'Año: {a}')
+
+'''
+
+# Escribir un programa que pregunte por consola por los productos de una cesta de la compra, separados por
+# comas, y muestre por pantalla cada uno de los productos en una línea distinta.
+
+cesta = input ('Escriba, separados por coma, los productos que compró: ')
+
+lista = cesta.split(', ')
+
+print ('LISTA DE COMPRAS\r\n')
+
+for i in lista:
+    print (i)
