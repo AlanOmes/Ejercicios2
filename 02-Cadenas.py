@@ -125,6 +125,8 @@ print (f'Año: {a}')
 # Escribir un programa que pregunte por consola por los productos de una cesta de la compra, separados por
 # comas, y muestre por pantalla cada uno de los productos en una línea distinta.
 
+'''
+
 cesta = input ('Escriba, separados por coma, los productos que compró: ')
 
 lista = cesta.split(', ')
@@ -133,3 +135,13 @@ print ('LISTA DE COMPRAS\r\n')
 
 for i in lista:
     print (i)
+
+# Otra forma de resolverlo
+
+print ('--------------')
+
+print (cesta.replace(', ', '\n'))
+
+'''
+
+
