@@ -189,3 +189,37 @@ else:
 # respuesta le muestre un menú con los ingredientes disponibles para que elija. Solo se puede eligir un
 # ingrediente además de la mozzarella y el tomate que están en todas la pizzas. Al final se debe mostrar por 
 # pantalla si la pizza elegida es vegetariana o no y todos los ingredientes que lleva.
+
+print ('\r\n¡Bienvenido a Bella Napoli!\n')
+print ('1) Pizza no vegetariana\r\n2) Pizza vegetariana\r\n')
+
+pedido = input ('Por favor, ingrese el número correspondiente a lo que quiera pedir:\r\n')
+
+print('\r')
+
+if pedido == '1':
+    print ('\rPIZZA NO VEGETARIANA\r\n')
+    print ('1) Peperoni\r\n2) Jamón\r\n3) Salmón\r\n')
+    i = input ('Ingrese el número correspondiente al ingrediente que quiera agregar (el tomate y la muzzarella ya están añadidos): \r\n')
+    print ('\r\n¡Excelente! Muchas gracias.')
+    if i == '1':
+        print ('\r\nPedido solicitado: Pizza no vegetariana con peperoni.')
+    elif i == '2':
+        print ('\r\nPedido solicitado: Pizza no vegetariana con jamón.')
+    elif i == '3':
+        print ('\r\nPedido solicitado: Pizza no vegetariana con salmón.')
+    else:
+        print ('¡Opción incorrecta! Por favor, inténtelo nuevamente.')
+elif pedido == '2':
+    print ('\rPIZZA VEGETARIANA\r\n')
+    print ('1) Pimiento\r\n2) Tofu')
+    i = input ('Ingrese el número correspondiente al ingrediente que quiera agregar (el tomate y la muzzarella ya están añadidos: \r\n')
+    print ('\r\n¡Excelente! Muchas gracias.')
+    if i == '1':
+        print ('\r\nPedido solicitado: Pizza vegetariana con pimiento.')
+    elif i == '2':
+        print ('\r\nPedido solicitado: Pizza vegetariana con tofu.')
+    else:
+        print ('¡Opción incorrecta! Por favor, inténtelo nuevamente.')
+else:
+    print ('¡Opción incorrecta! Por favor, inténtelo nuevamente.')
