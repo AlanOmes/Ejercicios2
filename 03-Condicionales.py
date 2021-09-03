@@ -190,6 +190,8 @@ else:
 # ingrediente además de la mozzarella y el tomate que están en todas la pizzas. Al final se debe mostrar por 
 # pantalla si la pizza elegida es vegetariana o no y todos los ingredientes que lleva.
 
+'''
+
 print ('\r\n¡Bienvenido a Bella Napoli!\n')
 print ('1) Pizza no vegetariana\r\n2) Pizza vegetariana\r\n')
 
@@ -223,3 +225,5 @@ elif pedido == '2':
         print ('¡Opción incorrecta! Por favor, inténtelo nuevamente.')
 else:
     print ('¡Opción incorrecta! Por favor, inténtelo nuevamente.')
+
+'''
