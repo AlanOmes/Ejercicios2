@@ -55,8 +55,10 @@ i = int (input ('Escriba el porcentaje de interés anual: '))
 a = int (input ('Escriba el número de años que va a realizar la inversión: '))
 
 for j in range (1, a+1):
-    interes = (i * c) / 100
-    print (f'{j}º año: {interes}')
+    interes = c * i / 100
+    cap_ob = c + interes
+    c = cap_ob 
+    print (f'{j}º año: {cap_ob}') 
 
 '''
 
@@ -111,3 +113,98 @@ for i in range(1, 11):
 #      7 5 3 1
 #      9 7 5 3 1
 
+# Escribir un programa que almacene la cadena de caracteres contraseña en una variable, pregunte al usuario por
+# la contraseña hasta que introduzca la contraseña correcta.
+
+'''
+
+contraseña = 'b22eadc1'
+preguntar = True
+
+while preguntar:
+    c = input ('Por favor, ingrese la contraseña: ')
+    print ('\r')
+    if c == contraseña:
+        print ('Contraseña correcta.')
+        preguntar = False
+    else:
+        print ('Contraseña incorrecta. Por favor, intente nuevamente.\r\n')
+
+'''
+
+# Escribir un programa que pida al usuario un número entero y muestre por pantalla si es un número primo o no.
+
+'''
+
+num = int (input ('Escriba un número entero mayor que 1: '))
+primo = True
+
+if num <= 1:
+    print ('¡Le he pedido un número entero mayor que 1!')
+else:
+    for i in range (2, 11):
+        if num % i == 0:
+            if num != i:
+                primo = False
+    if primo == True:
+        print (f'{num} es primo.')
+    else:
+        print (f'{num} no es primo.')
+
+'''
+
+# Escribir un programa que pida al usuario una palabra y luego muestre por pantalla una a una las letras de la
+# palabra introducida empezando por la última.
+
+'''
+
+pal = input ('Escriba una palabra: ')
+
+for i in pal[::-1]:
+    print (i)
+    
+'''
+
+# Escribir un programa en el que se pregunte al usuario por una frase y una letra, y muestre por pantalla el
+# número de veces que aparece la letra en la frase.
+
+'''
+
+frase = input ('Escriba una frase: ')
+letra = input ('Escriba una letra: ')
+cant = frase.count(letra)
+
+print (f'Cantidad de veces que aparece la letra "{letra}" en la frase: {cant}')
+
+print ('---------')
+
+# Otra forma de resolverlo
+
+contador = 0
+
+for i in frase:
+    if i == letra:
+        contador = contador + 1
+
+print (f'Cantidad de veces que aparece la letra "{letra}" en la frase: {contador}')
+
+'''
+
+# Escribir un programa que muestre el eco de todo lo que el usuario introduzca hasta que el usuario escriba
+# “salir” que terminará.
+
+'''
+
+preguntar = True
+
+while preguntar:
+    f = input ('Escriba lo que quiera y se lo repetiré (para terminar el programa escriba "salir"): ')
+    if f == 'Salir' or f == 'salir':
+        print ('\r\nPrograma finalizado. Muchas gracias.')
+        preguntar = False
+    else:
+        print ('\r')
+        print (f)
+        print ('\r')
+
+'''
