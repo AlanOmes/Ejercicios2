@@ -108,11 +108,81 @@ for i in numeros:
 # lista las asignaturas aprobadas. Al final el programa debe mostrar por pantalla las asignaturas que el
 # usuario tiene que repetir.
 
+'''
+
 materias = ['Matemáticas', 'Física', 'Química', 'Historia', 'Lengua']
-t = len(materias)
+r = []
 
+for i in range (len(materias)):
+    n = int (input (f'¿Cuánto sacaste en {materias[i]}?: '))
+    if n <= 5:
+        r.append(materias[i])
 
-for i in range (t-1):
-    nota = int (input (f'¿Qué nota sacaste en {materias[i]}: '))
-    if nota >= 6:
-        del materias[i]
+print ('\r')
+
+for i in range (len(r)):
+    print (f'Tienes que repetir {r[i]}')
+
+'''
+
+# Escribir un programa que almacene el abecedario en una lista, elimine de la lista las letras que ocupen
+# posiciones múltiplos de 3, y muestre por pantalla la lista resultante.
+
+'''
+
+abc = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'] 
+
+for i in range (len(abc), 1, -1):
+    if i % 3 == 0:
+        del abc[i-1]
+
+print (abc)
+
+'''
+
+# Escribir un programa que pida al usuario una palabra y muestre por pantalla si es un palíndromo.
+
+'''
+
+p = input ('Escriba una palabra: ')
+p = list(p)
+
+if p == (p[::-1]):
+    print ('La palabra es palíndroma.')
+else:
+    print ('No es palíndroma.')
+
+'''
+
+# Escribir un programa que pida al usuario una palabra y muestre por pantalla el número de veces que contiene 
+# cada vocal.
+
+'''
+
+p = input ('Escriba una palabra: ')
+vocales = ['a', 'e', 'i', 'o', 'u']
+
+for i in vocales:
+    v = 0
+    for l in p:
+        if l == i:
+            v = v + 1
+    print (f'La vocal {i} aparece {v} veces.')
+
+'''
+
+# Escribir un programa que almacene en una lista los siguientes precios, 50, 75, 46, 22, 80, 65, 8, y muestre 
+# por pantalla el menor y el mayor de los precios.
+
+'''
+
+precios = [50, 75, 46, 22, 80, 65, 8]
+precios.sort()
+
+print (f'El precio menor es {precios[0]} y el precio mayor es {precios[6]}')
+
+'''
+
+# Escribir un programa que almacene los vectores (1,2,3) y (-1,0,2) en dos listas y muestre por pantalla su
+# producto escalar.
+
