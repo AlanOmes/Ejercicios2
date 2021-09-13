@@ -186,3 +186,30 @@ print (f'El precio menor es {precios[0]} y el precio mayor es {precios[6]}')
 # Escribir un programa que almacene los vectores (1,2,3) y (-1,0,2) en dos listas y muestre por pantalla su
 # producto escalar.
 
+'''
+
+v = [1, 2, 3]
+v2 = [-1, 0, 2]
+v3 = []
+
+for i in range (len(v)):
+    e = v[i] * v2[i] 
+    v3.append(e)
+
+print (f'El producto escalar es {sum(v3)}') 
+
+print ('-------------')
+
+v = [1, 2, 3]
+v2 = [-1, 0, 2]
+e = 0
+
+for i in range (len(v)):
+    e = e + v[i] * v2[i]
+print (e)
+
+'''
+
+# Escribir un programa que almacene las matrices
+en una lista y muestre por pantalla su producto.
+Nota: Para representar matrices mediante listas usar listas anidadas, representando cada vector fila en una lista.
