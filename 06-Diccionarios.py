@@ -63,6 +63,8 @@ print (f'{u["nombre"]} tiene {u["edad"]} años, vive en {u["direccion"]} y su n�
 # por una fruta, un número de kilos y muestre por pantalla el precio de ese número de kilos de fruta. Si la
 # fruta no está en el diccionario debe mostrar un mensaje informando de ello.
 
+'''
+
 frutas = {
     'platano' : 1.35,
     'manzana' : 0.80,
@@ -89,3 +91,73 @@ if f.lower() in frutas:
         print (f'\r\nEl precio de {c}kg de naranjas es ${p} a razón de ${frutas["naranja"]} el kilo.')
 else:
     print ('\r\nLo siento, no disponemos de esa fruta.')
+
+'''
+
+# Escribir un programa que pregunte una fecha en formato dd/mm/aaaa y muestre por pantalla la misma fecha en 
+# formato dd de <mes> de aaaa donde <mes> es el nombre del mes.
+
+'''
+
+meses = {
+    '01' : 'Enero',
+    '02' : 'Febrero',
+    '03' : 'Marzo',
+    '04' : 'Abril',
+    '05' : 'Mayo',
+    '06' : 'Junio',
+    '07' : 'Julio',
+    '08' : 'Agosto',
+    '09' : 'Septiembre',
+    '10' : 'Octubre',
+    '11' : 'Noviembre',
+    '12' : 'Diciembre',
+}
+
+fecha = input ('Escriba una fecha en formato dd/mm/aaaa: ')
+
+d = fecha[:fecha.find('/')]
+m1 = fecha[fecha.find('/')+1:]
+m = m1[:m1.find('/')]
+a = m1[m1.find('/')+1:]
+
+print (f'{d} de {meses[m]} de {a}')
+
+'''
+
+# Escribir un programa que almacene el diccionario con los créditos de las asignaturas de un curso 
+# {'Matemáticas': 6, 'Física': 4, 'Química': 5} y después muestre por pantalla los créditos de cada asignatura
+# en el formato <asignatura> tiene <créditos> créditos, donde <asignatura> es cada una de las asignaturas del 
+# curso, y <créditos> son sus créditos. Al final debe mostrar también el número total de créditos del curso.
+
+'''
+
+notas = {
+    'Matematicas' : 6,
+    'Fisica' : 4,
+    'Quimica' : 5,
+}
+
+t = 0
+
+for i in notas:
+    t += notas[i]
+    print(f'{i} tiene {notas[i]} créditos.')
+
+print ('\r')
+
+print (f'El número total de créditos del curso es {t}') 
+
+''' 
+
+# Escribir un programa que cree un diccionario vacío y lo vaya llenado con información sobre una persona (por
+# ejemplo nombre, edad, sexo, teléfono, correo electrónico, etc.) que se le pida al usuario. Cada vez que se
+# añada un nuevo dato debe imprimirse el contenido del diccionario.
+
+datos = ['nombre', 'edad', 'sexo', 'telefono', 'mail']
+
+for i in datos:
+    usuario = {
+        i : input (f'Ingrese su {i}: '),
+    }
+print (usuario)  
