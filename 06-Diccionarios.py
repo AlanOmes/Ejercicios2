@@ -154,10 +154,124 @@ print (f'El número total de créditos del curso es {t}')
 # ejemplo nombre, edad, sexo, teléfono, correo electrónico, etc.) que se le pida al usuario. Cada vez que se
 # añada un nuevo dato debe imprimirse el contenido del diccionario.
 
-datos = ['nombre', 'edad', 'sexo', 'telefono', 'mail']
+'''
 
-for i in datos:
-    usuario = {
-        i : input (f'Ingrese su {i}: '),
-    }
-print (usuario)  
+persona = {}
+continuar = True
+
+while continuar:
+    clave = input('¿Qué dato quieres introducir? ')
+    valor = input(clave + ': ')
+    persona[clave] = valor
+    print(persona)
+    continuar = input('¿Quieres añadir más información (Si/No)? ') == "Si"
+
+'''
+
+# Escribir un programa que cree un diccionario simulando una cesta de la compra. El programa debe preguntar el
+# artículo y su precio y añadir el par al diccionario, hasta que el usuario decida terminar. Después se debe
+# mostrar por pantalla la lista de la compra y el coste total, con el siguiente formato
+
+#       Lista de la compra 	
+
+#    Artículo 1 	Precio
+#    Artículo 2 	Precio
+#    Artículo 3 	Precio
+#      …           	…
+#     Total 	    Coste
+
+'''
+
+cesta = {}
+preguntar = True
+
+while preguntar:
+    clave = input ('¿Qué producto quieres añadir a la cesta de compras?: \r\n')
+    valor = float (input (f'Precio de {clave}: '))
+    cesta[clave] = valor
+    p = input ('¿Quieres seguir agregando productos a la cesta de compras? (Si/No): ')
+    if p.upper() == 'NO':
+        preguntar = False
+
+print ('\r\n')
+print ('       LISTA DE COMPRAS')
+print ('\r')
+
+t = 0
+
+for i in cesta:
+    print (f'{i} \t\t\t${cesta[i]}')
+    t += cesta[i]
+
+print ('...\t\t\t...')
+print (f'Total\t\t\t{t}')
+
+'''
+
+# Escribir un programa que gestione las facturas pendientes de cobro de una empresa. Las facturas se 
+# almacenarán en un diccionario donde la clave de cada factura será el número de factura y el valor el coste de
+# la factura. El programa debe preguntar al usuario si quiere añadir una nueva factura, pagar una existente o 
+# terminar. Si desea añadir una nueva factura se preguntará por el número de factura y su coste y se añadirá al
+# diccionario. Si se desea pagar una factura se preguntará por el número de factura y se eliminará del 
+# diccionario. Después de cada operación el programa debe mostrar por pantalla la cantidad cobrada hasta el 
+# momento y la cantidad pendiente de cobro.
+
+'''
+
+facturas = {}
+preguntar = True
+
+cobrado = 0
+deuda = 0
+
+while preguntar:       
+    print ('\r\n1) Añadir una nueva factura\r\n2) Pagar una factura existente\r\n3) Finalizar')
+    opciones = input ('\r\nEscriba el número de opción que desee: ')
+    if opciones == '1':
+        n_factura = input ('\r\nIngrese el número de la factura: ')
+        p_factura = float (input ('Ingrese el valor de la factura: '))
+        facturas[n_factura] = p_factura
+        deuda += p_factura
+        print ('\r\n¡Factura añadida! Muchas gracias.')
+    elif opciones == '2':
+        n_factura = input ('\r\nIngrese el número de la factura: ')
+        for i in facturas:
+            if i == n_factura:
+                pagar = True
+                cobrado += facturas[n_factura]
+                deuda -= facturas[n_factura]
+        if pagar == True:
+                del facturas[n_factura]
+                print ('\r\n¡Pago realizado! Muchas gracias.')
+    elif opciones == '3':                           
+        preguntar = False
+        print ('\r\n¡Programa finalizado! Muchas gracias.')
+    else:
+        print ('\r\nOpción inexistente. Por favor, inténtelo nuevamente.')
+    
+    print ('\r\n   FACTURAS\r\n')
+    
+    for i in facturas:
+        print (f'{i} \t: \t$ {facturas[i]}')
+    
+    print ('\r')
+    print (f'Cantidad recaudada: $ {cobrado}')
+    print (f'Cantidad pendiente a cobrar: $ {deuda}')
+
+'''
+
+# Escribir un programa que permita gestionar la base de datos de clientes de una empresa. Los clientes se 
+# guardarán en un diccionario en el que la clave de cada cliente será su NIF, y el valor será otro diccionario
+# con los datos del cliente (nombre, dirección, teléfono, correo, preferente), donde preferente tendrá el 
+# valor True si se trata de un cliente preferente. El programa debe preguntar al usuario por una opción del 
+# siguiente menú: (1) Añadir cliente, (2) Eliminar cliente, (3) Mostrar cliente, (4) Listar todos los clientes,
+# (5) Listar clientes preferentes, (6) Terminar. En función de la opción elegida el programa tendrá que hacer
+# lo siguiente:
+
+# 1) Preguntar los datos del cliente, crear un diccionario con los datos y añadirlo a la base de datos.
+# 2) Preguntar por el NIF del cliente y eliminar sus datos de la base de datos.
+# 3) Preguntar por el NIF del cliente y mostrar sus datos.
+# 4) Mostrar lista de todos los clientes de la base datos con su NIF y nombre.
+# 5) Mostrar la lista de clientes preferentes de la base de datos con su NIF y nombre.
+# 6) Terminar el programa.
+
