@@ -275,3 +275,43 @@ while preguntar:
 # 5) Mostrar la lista de clientes preferentes de la base de datos con su NIF y nombre.
 # 6) Terminar el programa.
 
+clientes = {}
+preguntar = True
+
+def agregar_cliente():
+    dni = input ('Escribir el DNI del cliente: ')
+    nombre = input ('Nombre y apellido del cliente: ')
+    nombre = {
+        'Direccion' : input ('Dirección del cliente: '),
+        'Telefono' : input ('Telefono del cliente: '),
+        'Correo' : input ('Correo electrónico del cliente: '),
+        'Preferente' : input ('¿Es un cliente preferente?: '),
+    }
+    if nombre['Preferente'] == 'SI':
+        preferente = True
+    clientes[dni] = nombre
+agregar_cliente()
+
+
+
+
+
+
+
+
+
+
+'''
+
+while preguntar:
+    print ('\r\n1) Añadir cliente\r\n2) Eliminar cliente\r\n3) Mostrar cliente\r\n4) Listar todos los clientes\r\n5) Listar clientes preferentes\r\n6) Terminar')
+    opcion = input ('\r\nElija la opción que desee: ')
+    if opcion == '1':         
+
+'''
+
+
+
+
+
+ 
