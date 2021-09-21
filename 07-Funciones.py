@@ -29,7 +29,7 @@ def factorial(num):
     f = 1
     for i in range (1, num+1):
         f *= i 
-    print (f)
+    return f
 
 factorial(5)
 factorial(4)
@@ -45,7 +45,7 @@ factorial(4)
 def iva (num, p = 21):
     porcentaje = (p * num) / 100
     t = num + porcentaje
-    print (t)
+    return t
 
 iva(100, 20)
 iva (10)
@@ -56,17 +56,49 @@ iva (10)
 
 '''
 
-l = [1, 2, 3, 4, 5]
-
 def media (l, c):
     m = 0
     for i in l:
         m += i
-    print (m / c)
+    return (m / c)
+
+l = [1, 2, 3, 4, 5]
 
 media(l, len(l))
 
 '''
 
 # Escribir una función que reciba una muestra de números en una lista y devuelva otra lista con sus cuadrados.
+
+
+
+
+
+def cuadrado(l):
+    l_c = []
+    for i in l:
+        c = i ** 2
+        l_c.append(c)
+    return l_c
+
+l = [1, 2, 3, 4, 5]
+
+print (cuadrado(l))
+
+
+
+# Juli
+
+
+
+def suma(a, b): 
+    r = a + b # 2
+    return r # 3
+
+s =  suma(2, 2) # 1
+
+if s % 2 == 0: # 4 
+    print (f'{s} es par') # 5
+else: # 4
+    print (f'{s} es impar.') # 5
 
