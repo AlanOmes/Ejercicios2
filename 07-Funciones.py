@@ -70,9 +70,7 @@ media(l, len(l))
 
 # Escribir una función que reciba una muestra de números en una lista y devuelva otra lista con sus cuadrados.
 
-
-
-
+'''
 
 def cuadrado(l):
     l_c = []
@@ -85,11 +83,11 @@ l = [1, 2, 3, 4, 5]
 
 print (cuadrado(l))
 
-
+'''
 
 # Juli
 
-
+'''
 
 def suma(a, b): 
     r = a + b # 2
@@ -101,4 +99,55 @@ if s % 2 == 0: # 4
     print (f'{s} es par') # 5
 else: # 4
     print (f'{s} es impar.') # 5
+
+'''
+
+# Escribir una función que reciba una muestra de números en una lista y devuelva un diccionario con su promedio,
+# cuadrado y raíz cuadrada.
+
+'''
+
+def suma(l):
+    s = 0
+    for i in l:
+        s += i
+    return s
+
+def calculos (l):
+    cajeta = suma(l)
+    total = {
+        'promedio' : cajeta / len(l),
+        'cuadrado' : cajeta ** 2,
+        'raiz' : cajeta ** 0.5,
+    }
+    return total
+
+l = [1, 2, 3, 4, 5]
+print (calculos(l))
+
+'''
+
+# Escribir una función que convierta un número decimal en binario y otra que convierta un número binario en
+# decimal.
+
+'''
+
+def binario_decimal(n):
+    string = str(n)
+    b = int(string, 2)
+    return b
+
+def decimal_binario(n):
+    binario = []
+    while n > 0:
+        binario.append(str(n % 2))
+        n //= 2
+    binario.reverse()
+    return ''.join(binario)
+
+print (binario_decimal(1101))
+print (decimal_binario(13))
+
+'''
+
 
