@@ -149,5 +149,46 @@ print (binario_decimal(1101))
 print (decimal_binario(13))
 
 '''
+# Solicitar al usuario que ingrese su dirección email. Imprimir un mensaje indicando si la dirección es válida 
+# o no, valiéndose de una función para decidirlo. Una dirección se considerará válida si contiene el símbolo "@".
 
 
+'''
+
+def validez(mail):
+    mail = list(mail)
+    valido = 0
+    for i in mail:
+        if i == '@':
+            valido += 1
+    if valido == 1:
+        return True
+    else:
+        return False
+
+mail = input ('Ingrese su mail: ')
+
+if validez(mail) == True:
+    print ('La dirección es válida.')
+else:
+    print ('La dirección es invalida.')
+
+'''
+
+# Solicitar números al usuario hasta que ingrese el cero. Por cada uno, mostrar la suma de sus dígitos 
+# (utilizando una función que realice dicha suma).
+
+def suma(n):
+    t = 0
+    t +=n
+    return t
+
+preguntar = True
+total = 0
+
+while preguntar:
+    n = int (input ('Ingrese un número: '))
+    total += suma(n)
+    print (total)
+    if n == 0:
+        preguntar = False 
