@@ -178,17 +178,106 @@ else:
 # Solicitar números al usuario hasta que ingrese el cero. Por cada uno, mostrar la suma de sus dígitos 
 # (utilizando una función que realice dicha suma).
 
+'''
+
+def suma_digitos(n):
+    copia = n
+    suma=0
+    while copia != 0:
+        digito = copia % 10
+        suma = suma + digito
+        copia = copia // 10
+    return suma
+
+n = int (input('Ingrese un número y sumaré sus dígitos: '))
+
+while n != 0:
+    t = suma_digitos(n)
+    print (f'La suma de los dígitos de {n} es {t}')
+    n = int (input('Ingrese un número y sumaré sus dígitos: '))
+
+'''
+
+# Solicitar números al usuario hasta que ingrese el cero. Por cada uno, mostrar la suma de sus dígitos. Al
+# finalizar, mostrar la sumatoria de todos los números ingresados y la suma de sus dígitos. Reutilizar la misma
+# función realizada en el ejercicio 2.
+
+'''
+
+def suma_digitos(n):
+    copia = n
+    suma = 0
+    while copia != 0:
+        digito = copia % 10
+        suma = suma + digito
+        copia = copia // 10
+    return suma
+
 def suma(n):
     t = 0
-    t +=n
+    t += n
     return t
 
 preguntar = True
 total = 0
 
 while preguntar:
-    n = int (input ('Ingrese un número: '))
-    total += suma(n)
-    print (total)
+    n = int (input('\r\nIngrese un número: '))
     if n == 0:
-        preguntar = False 
+        preguntar = False
+    else:
+        t = suma_digitos(n)
+        print (f'La suma de los dígitos de {n} es {t}')
+        total += suma(n)
+    
+t = suma_digitos(total)
+
+print (f'\r\nLa suma total de todos los números es {total}')
+print (f'La suma total de los digitos de {total} es {t}')
+
+'''
+
+# Requerir al usuario que ingrese un número entero e informar si es primo o no, utilizando una función booleana
+# que lo decida.
+
+'''
+
+def primo(n):
+    primo = True
+    for i in range (2, 11):
+        if n % i == 0:
+            if n != i:
+                primo = False
+    if primo == True:
+        return True
+    else:
+        return False
+
+n = int (input('Ingrese un número y le diré si es primo: '))
+
+if primo(n) == True:
+    print (f'{n} es primo.')
+else:
+    print (f'{n} no es primo.')
+
+'''
+
+# Solicitar al usuario un número entero y luego un dígito. Informar la cantidad de ocurrencias del dígito en el
+# número, utilizando para ello una función que calcule la frecuencia.
+
+def frecuencia(n, d):
+    copia = n
+    f = 0
+    while copia != 0:
+        digito = copia % 10
+        if digito == d:
+            f += 1
+        copia = copia // 10
+    return f
+ 
+n = int (input ('Ingrese un número entero: '))
+d = int (input ('Ingrese un dígito: '))
+frecuencia = frecuencia(n, d)
+
+print (f'La cantidad de veces que aparece {d} en {n} es {frecuencia}')
+
