@@ -265,6 +265,8 @@ else:
 # Solicitar al usuario un número entero y luego un dígito. Informar la cantidad de ocurrencias del dígito en el
 # número, utilizando para ello una función que calcule la frecuencia.
 
+'''
+
 def frecuencia(n, d):
     copia = n
     f = 0
@@ -280,4 +282,113 @@ d = int (input ('Ingrese un dígito: '))
 frecuencia = frecuencia(n, d)
 
 print (f'La cantidad de veces que aparece {d} en {n} es {frecuencia}')
+
+'''
+
+# Escribir un programa que pida números positivos al usuario. Mostrar el número cuya sumatoria de dígitos fue
+# mayor y la cantidad de números cuya sumatoria de dígitos fue menor que 10. Utilizar una o más funciones, 
+# según sea necesario.
+
+"""
+
+def suma_digitos(n):
+    copia = n
+    suma = 0
+    while copia != 0:
+        digito = copia % 10
+        suma = suma + digito
+        copia = copia // 10
+    return suma
+
+def suma_mayor(n, s, maxx):
+    if s > maxx:
+        maxx = s
+    return n 
+
+'''def menor_10(m):
+    menores = []
+    if m < 10:  
+        menores.append(m)
+    return menores
+'''
+preguntar = True
+maxx = -9999
+
+while preguntar:
+    n = int (input('Ingrese un número (0 para cortar): '))
+    if n == 0:
+        preguntar = False
+    else:
+        suma = suma_digitos(n)
+        maxx = suma_mayor(n, suma, maxx)
+        
+print (n) 
+
+"""
+
+# Solicitar al usuario el ingreso de números primos. La lectura finalizará cuando ingrese un número que no sea
+# primo. Por cada número, mostrar la suma de sus dígitos. También solicitar al usuario un dígito e informar la
+# cantidad de veces que aparece en el número (frecuencia). Al finalizar el programa, mostrar el factorial del
+# mayor número ingresado.
+
+'''
+
+def primo(n):
+
+    primo = True
+    for i in range (2, 11):
+        if n % i == 0:
+            if n != i:
+                primo = False
+    if primo == True:
+        return True
+    else:
+        return False
+
+def suma_digitos(n):
+    copia = n
+    suma = 0
+    while copia != 0:
+        digito = copia % 10
+        suma = suma + digito
+        copia = copia // 10
+    return suma
+
+def frecuencia(n, d):
+    copia = n
+    f = 0
+    while copia != 0:
+        digito = copia % 10
+        if digito == d:
+            f += 1
+        copia = copia // 10
+    return f
+
+def factorial(num):
+    f = 1
+    for i in range (1, num+1):
+        f *= i 
+    return f
+
+def num_alto(n, maxx):
+    if n > maxx:
+        maxx = n
+    return maxx
+
+preguntar = True
+mayor = -99999
+
+while preguntar:
+    num = int (input('\r\nIngrese un número primo: '))
+    if primo(num) == False:
+        print ('Ha ingresado un número que no es primo. Programa finalizado.')
+        preguntar = False
+    else:
+        print (f'Suma de los digitos: {suma_digitos(num)}')
+        frec = int (input ('\r\nIngrese un dígito: '))
+        print (f'Cantidad de veces que aparece el {frec} en {num}: {frecuencia(num, frec)}')
+        mayor = num_alto(num, mayor)
+print (f'\r\nEl número más alto que ingresó es {mayor} y su factorial es {factorial(mayor)}')
+        
+'''
 
