@@ -417,10 +417,53 @@ else:
 # palabras están separadas por uno o más espacios. También podría haber espacios al principio o al final del
 # string pasado por parámetro.
 
-'''def longitud_ultima_palabra(frase):
 '''
 
-aa = 'hola como estas'
-a = aa[aa.find(' '):]
+def longitud_ultima_palabra(frase):
+    frase = frase.split()
+    frase = frase[len(frase) - 1]
+    return len(frase)
 
-print (a)
+f = input ('Escriba una frase: ')
+
+print (longitud_ultima_palabra(f))
+
+'''
+
+# Escribir un programa que permita al usuario obtener un identificador para cada uno de los socios de un club.
+# Para eso ingresará nombre completo y número de DNI de cada socio, indicando que finalizará el procesamiento
+# mediante el ingreso de un nombre vacío. Precondición: el formato del nombre de los socios será: nombre 
+# apellido. Podría ingresarse más de un nombre, en cuyo caso será: nombre1 nombre2 apellido. Si un socio 
+# tuviera más de un apellido, el usuario sólo ingresará uno. Se debe validar que el número de DNI tenga 7 u 8
+# dígitos. En caso contrario, el programa debe dejar al usuario en un bucle hasta que ingrese un DNI correcto.
+# Por cada socio se debe imprimir su identificador único, el cual estará formado por: el primer nombre, la
+# cantidad de letras del apellido y los primeros 3 dígitos de su DNI. Ejemplo:
+# Nombre: Alba María Linares
+# DNI: 25834910
+# Alba7258
+
+
+
+def longitud_ultima_palabra(frase):
+    frase = frase.split()
+    frase = frase[len(frase) - 1]
+    return len(frase)
+
+def dni(dni):
+    dni = str(dni)
+    if len(dni) == 7 or len(dni) == 8:
+        return True
+    else:
+        return False
+
+#nombre = input ('Ingrese su nombre/s y apellido (si tiene más de un apellido, solo ingrese uno): ')
+
+preguntar = True
+
+while preguntar:
+    dni = int(input('Ingrese su número de DNI: ')) 
+    if dni(dni) == False:
+        print ('Número de DNI inrorrecto. Por favor, inténtelo nuevamente.')
+    else:
+        preguntar = False
+
