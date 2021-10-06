@@ -392,4 +392,35 @@ print (f'\r\nEl número más alto que ingresó es {mayor} y su factorial es {fac
         
 '''
 
+# Escribir una función que, dado un número de DNI, retorne True si el número es válido y False si no lo es. 
+# Para que un número de DNI sea válido debe tener entre 7 y 8 dígitos.
  
+'''
+
+def dni(dni):
+    dni = str(dni)
+    if len(dni) == 7 or len(dni) == 8:
+        return True
+    else:
+        return False
+
+documento = int(input ('Ingrese su número de documento: '))
+
+if dni(documento) == True:
+    print ('Documento válido.')
+else:
+    print ('Documento inválido.')
+
+'''
+
+# Escribir una función que, dado un string, retorne la longitud de la última palabra. Se considera que las
+# palabras están separadas por uno o más espacios. También podría haber espacios al principio o al final del
+# string pasado por parámetro.
+
+'''def longitud_ultima_palabra(frase):
+'''
+
+aa = 'hola como estas'
+a = aa[aa.find(' '):]
+
+print (a)
