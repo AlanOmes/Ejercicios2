@@ -394,7 +394,7 @@ print (f'\r\nEl número más alto que ingresó es {mayor} y su factorial es {fac
 
 # Escribir una función que, dado un número de DNI, retorne True si el número es válido y False si no lo es. 
 # Para que un número de DNI sea válido debe tener entre 7 y 8 dígitos.
- 
+
 '''
 
 def dni(dni):
@@ -442,7 +442,7 @@ print (longitud_ultima_palabra(f))
 # DNI: 25834910
 # Alba7258
 
-
+'''
 
 def longitud_ultima_palabra(frase):
     frase = frase.split()
@@ -456,14 +456,29 @@ def dni(dni):
     else:
         return False
 
-#nombre = input ('Ingrese su nombre/s y apellido (si tiene más de un apellido, solo ingrese uno): ')
+def primerosTresDigitos(num):
+    num = str(num)
+    a = num[:3]
+    return a
+
+nombreCompleto = input ('\r\nIngrese su nombre/s y apellido (si tiene más de un apellido, solo ingrese uno): ')
 
 preguntar = True
 
 while preguntar:
-    dni = int(input('Ingrese su número de DNI: ')) 
-    if dni(dni) == False:
+    doc = int(input('\r\nIngrese su número de DNI: ')) 
+    if dni(doc) == False:
         print ('Número de DNI inrorrecto. Por favor, inténtelo nuevamente.')
     else:
         preguntar = False
+        print ('DNI ingresado correctamente. Muchas gracias.')
+
+nombre = nombreCompleto[:nombreCompleto.find(' ')]
+largoApellido = longitud_ultima_palabra(nombreCompleto)  
+tresDigitos = primerosTresDigitos(doc)
+
+print ('\r\nRegistrado correctamente.')
+print (f'Nombre: {nombreCompleto}\r\nDNI: {doc}\r\nIdentificador: {nombre}{largoApellido}{tresDigitos}')
+
+'''
 
