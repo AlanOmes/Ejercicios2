@@ -282,10 +282,43 @@ while preguntar:
     print ('\r\n1) Añadir cliente\r\n2) Eliminar cliente\r\n3) Mostrar cliente\r\n4) Listar todos los clientes\r\n5) Listar clientes preferentes\r\n6) Terminar')
     opcion = input ('\r\nElija la opción que desee: ')
     if opcion == '1':
-        dni = int (input('Ingrese el dni del cliente:'))
-        nombre = 
-    
-
+        dni = (input('\r\nIngrese el dni del cliente: '))
+        info_cliente = input ('Ingrese el nombre completo del cliente: ')
+        preferente = input ('¿Es un cliente preferente? (Si/No): ')
+        preferente = preferente.capitalize()
+        info_cliente = {
+        'Nombre' : (f'{info_cliente.title()}'),
+        'Documento' : (f'{dni}'),
+        'Direccion' : input ('Dirección del cliente: '),
+        'Telefono' : input ('Telefono del cliente: '),
+        'Correo' : input ('Correo electrónico del cliente: '),
+        'Preferente' : (f'{preferente}'),
+        }
+        if preferente == 'Si':
+            cliente_preferente = True
+        else:
+            cliente_preferente = False
+        clientes[dni] = info_cliente
+        print ('\r\nCliente añadido correctamente.')
+    elif opcion == '2':
+        eliminar = (input ('\r\nIngrese el dni del cliente que quiera eliminar: '))
+        if eliminar in clientes:
+            del clientes[eliminar]
+            print ('Cliente eliminado con éxito. Muchas gracias.')
+        else:
+            print ('El número de dni no está registrado. Por favor, inténtelo nuevamente.')        
+    elif opcion == '3':
+        cliente = (input('\r\nIngrese el dni del cliente: '))
+        if cliente in clientes:
+            print('\r')
+            for i in clientes[cliente]:
+                c = clientes[cliente]
+                print (f'{i}: {c[i]}')
+        else:
+            print ('El número de dni no está registrado. Por favor, inténtelo nuevamente.')
+    elif opcion == '6':
+        preguntar = False
+print (clientes)
 
 
 
