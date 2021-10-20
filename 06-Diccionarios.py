@@ -276,12 +276,13 @@ while preguntar:
 # 6) Terminar el programa.
 
 clientes = {}
+preferentes = {}
 
 preguntar = True
 while preguntar:
     print ('\r\n1) Añadir cliente\r\n2) Eliminar cliente\r\n3) Mostrar cliente\r\n4) Listar todos los clientes\r\n5) Listar clientes preferentes\r\n6) Terminar')
     opcion = input ('\r\nElija la opción que desee: ')
-    if opcion == '1':
+    if opcion == '1': # Pide los datos del cliente y lo agrega al diccionario 'clientes' (si el cliente es preferente, también lo agrega al diccionario 'preferentes')
         dni = (input('\r\nIngrese el dni del cliente: '))
         info_cliente = input ('Ingrese el nombre completo del cliente: ')
         preferente = input ('¿Es un cliente preferente? (Si/No): ')
@@ -295,30 +296,42 @@ while preguntar:
         'Preferente' : (f'{preferente}'),
         }
         if preferente == 'Si':
-            cliente_preferente = True
-        else:
-            cliente_preferente = False
+            preferentes[dni] = info_cliente            
         clientes[dni] = info_cliente
         print ('\r\nCliente añadido correctamente.')
-    elif opcion == '2':
+    elif opcion == '2': # Elimina el cliente con el número de dni
         eliminar = (input ('\r\nIngrese el dni del cliente que quiera eliminar: '))
         if eliminar in clientes:
-            del clientes[eliminar]
+            del clientes[eliminar] 
             print ('Cliente eliminado con éxito. Muchas gracias.')
         else:
             print ('El número de dni no está registrado. Por favor, inténtelo nuevamente.')        
-    elif opcion == '3':
+    elif opcion == '3': 
         cliente = (input('\r\nIngrese el dni del cliente: '))
         if cliente in clientes:
             print('\r')
-            for i in clientes[cliente]:
-                c = clientes[cliente]
+            for i in clientes[cliente]: 
+                c = clientes[cliente] # clientes[cliente] = diccionario de la información del cliente (info_cliente)
                 print (f'{i}: {c[i]}')
         else:
             print ('El número de dni no está registrado. Por favor, inténtelo nuevamente.')
+    elif opcion == '4':
+        print ('\r')
+        for i in clientes:
+            print ('\r')
+            cliente = clientes[i] # clientes[i] diccionario de la información del cliente acorde a su dni
+            for i in cliente:
+                print (f'{i}: {cliente[i]}') # muestra dicho diccionario
+    elif opcion == '5':
+        print ('\r')
+        for i in preferentes:
+            print ('\r')
+            pref = preferentes[i] # preferentes[i] = diccionario con la información del cliente preferente acorde a su dni
+            for i in pref:
+                print (f'{i}: {pref[i]}')
     elif opcion == '6':
         preguntar = False
-print (clientes)
+        print ('Programa finalizado. Muchas gracias.')
 
 
 
