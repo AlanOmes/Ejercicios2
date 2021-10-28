@@ -3,6 +3,8 @@
 # las funciones anteriores, y utilice la función pasada para aplicar los descuentos o el IVA a los productos de
 # la cesta y devolver el precio final de la cesta.
 
+'''
+
 def aplicar_descuento(precio, porcentaje):
     cantidadADescontar = (porcentaje * precio) / 100
     precioFinal = precio - cantidadADescontar
@@ -14,19 +16,30 @@ def aplicar_iva(precio, iva):
     return precioFinal
 
 def aplicar_iva_o_descuentos(precios_y_porcentajes, funcion):
-    for i in precios_y_porcentajes:
-        precioFinal = funcion(i, precios_y_porcentajes[i])
-        return precioFinal
+    total = 0
+    for precio, descuento in precios_y_porcentajes.items():
+        total += funcion(precio, descuento)
+    return total        
 
 lista_de_precios = {
-    100 : 10,
-    200 : 20,
-    300 : 30,
+    1000 : 20,
+    500 : 10,
+    100 : 1,
 }
 
-print (aplicar_iva_o_descuentos(lista_de_precios, aplicar_iva()))
+print (f'El precio de la compra tras aplicar los descuentos es: {aplicar_iva_o_descuentos(lista_de_precios, aplicar_descuento)}')
+print (f'El precio de la compra tras aplicar el IVA es: {aplicar_iva_o_descuentos(lista_de_precios, aplicar_iva)}')
+
+'''
+
+# Escribir una función que simule una calculadora científica que permita calcular el seno, coseno, tangente,
+# exponencial y logaritmo neperiano. La función preguntará al usuario el valor y la función a aplicar, y
+# mostrará por pantalla una tabla con los enteros de 1 al valor introducido y el resultado de aplicar la
+# función a esos enteros.
 
 
+
+print (5**6)
 
 
 
