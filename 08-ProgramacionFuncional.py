@@ -37,10 +37,15 @@ print (f'El precio de la compra tras aplicar el IVA es: {aplicar_iva_o_descuento
 # mostrará por pantalla una tabla con los enteros de 1 al valor introducido y el resultado de aplicar la
 # función a esos enteros.
 
+import math
 
-
-print (5**6)
-
-
-
-
+def calculadora_cientifica():
+    num = int (input('Ingrese el valor que quiera calcular: '))
+    func = input ('Escriba la función que quiera aplicar (sen/cos/tan/exp/log): ')
+    resultado = ''
+    for i in range(1, num+1):
+        if func == 'sen':
+            seno = math.sin(i)
+            resultado += (f'sen {str(i)} = {str(seno)}\n') 
+    return resultado
+print (calculadora_cientifica()) 
