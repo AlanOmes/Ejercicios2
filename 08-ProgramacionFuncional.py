@@ -38,14 +38,29 @@ print (f'El precio de la compra tras aplicar el IVA es: {aplicar_iva_o_descuento
 # función a esos enteros.
 
 import math
+import numpy as np
 
 def calculadora_cientifica():
     num = int (input('Ingrese el valor que quiera calcular: '))
     func = input ('Escriba la función que quiera aplicar (sen/cos/tan/exp/log): ')
+    func = func.lower()
     resultado = ''
     for i in range(1, num+1):
         if func == 'sen':
             seno = math.sin(i)
-            resultado += (f'sen {str(i)} = {str(seno)}\n') 
+            resultado += (f'sen {str(i)} = {str(seno)}\n')
+        elif func == 'cos':
+            coseno = math.cos(i)
+            resultado += (f'cos {str(i)} = {str(coseno)}\n')
+        elif func == 'tan':
+            tangente = math.tan(i)
+            resultado += (f'tan {str(i)} = {str(tangente)}\n')
+        elif func == 'exp':
+            exponencial = np.exp(i)
+            resultado += (f'exp {str(i)} = {str(exponencial)}\n')
+        elif func == 'log':
+            logaritmo = math.log(i)
+            resultado += (f'log {str(i)} = {str(logaritmo)}\n')
     return resultado
-print (calculadora_cientifica()) 
+
+print (calculadora_cientifica())
