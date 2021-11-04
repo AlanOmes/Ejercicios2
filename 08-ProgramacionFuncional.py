@@ -37,6 +37,8 @@ print (f'El precio de la compra tras aplicar el IVA es: {aplicar_iva_o_descuento
 # mostrará por pantalla una tabla con los enteros de 1 al valor introducido y el resultado de aplicar la
 # función a esos enteros.
 
+'''
+
 import math
 import numpy as np
 
@@ -64,3 +66,44 @@ def calculadora_cientifica():
     return resultado
 
 print (calculadora_cientifica())
+
+'''
+
+# Escribir una función que reciba otra función y una lista, y devuelva otra lista con el resultado de aplicar
+# la función dada a cada uno de los elementos de la lista.
+
+import math
+import numpy as np
+
+def calculadora_cientifica(pregunta, num):
+    resultado = ''
+    if pregunta == 'sen':
+        seno = math.sin(num)
+        resultado += (f'sen {str(num)} = {str(seno)}\n')
+    elif pregunta == 'cos':
+        coseno = math.cos(num)
+        resultado += (f'cos {str(num)} = {str(coseno)}\n')
+    elif pregunta == 'tan':
+        tangente = math.tan(num)
+        resultado += (f'tan {str(num)} = {str(tangente)}\n')
+    elif pregunta == 'exp':
+        exponencial = np.exp(num)
+        resultado += (f'exp {str(num)} = {str(exponencial)}\n')
+    elif pregunta == 'log':
+        logaritmo = math.log(num)
+        resultado += (f'log {str(num)} = {str(logaritmo)}\n')
+    return resultado
+
+def aplicar_funcion_en_lista(preg, funcion, lista):
+    resultados = []
+    for i in lista:
+        r = funcion(preg, i)
+        resultados.append(r)
+    return resultados
+
+l = [1, 2, 3, 4, 5]
+func = input ('Escriba la función que quiera aplicar (sen/cos/tan/exp/log): ')
+func = func.lower()
+
+print (aplicar_funcion_en_lista(func, calculadora_cientifica, l)) 
+
