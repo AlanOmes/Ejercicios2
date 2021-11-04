@@ -72,26 +72,22 @@ print (calculadora_cientifica())
 # Escribir una función que reciba otra función y una lista, y devuelva otra lista con el resultado de aplicar
 # la función dada a cada uno de los elementos de la lista.
 
+'''
+
 import math
 import numpy as np
 
 def calculadora_cientifica(pregunta, num):
-    resultado = ''
     if pregunta == 'sen':
-        seno = math.sin(num)
-        resultado += (f'sen {str(num)} = {str(seno)}\n')
+        resultado = math.sin(num)    
     elif pregunta == 'cos':
-        coseno = math.cos(num)
-        resultado += (f'cos {str(num)} = {str(coseno)}\n')
+        resultado = math.cos(num)
     elif pregunta == 'tan':
-        tangente = math.tan(num)
-        resultado += (f'tan {str(num)} = {str(tangente)}\n')
+        resultado = math.tan(num)
     elif pregunta == 'exp':
-        exponencial = np.exp(num)
-        resultado += (f'exp {str(num)} = {str(exponencial)}\n')
+        resultado = np.exp(num)
     elif pregunta == 'log':
-        logaritmo = math.log(num)
-        resultado += (f'log {str(num)} = {str(logaritmo)}\n')
+        resultado = math.log(num)
     return resultado
 
 def aplicar_funcion_en_lista(preg, funcion, lista):
@@ -107,3 +103,158 @@ func = func.lower()
 
 print (aplicar_funcion_en_lista(func, calculadora_cientifica, l)) 
 
+'''
+
+# Escribir una función que reciba otra función booleana y una lista, y devuelva otra lista con los elementos de
+# la lista que devuelvan True al aplicarles la función booleana.
+
+'''
+
+def numero_par(num):
+    if num % 2 == 0:
+        return True
+    else:
+        return False
+
+def devolver_numeros_pares(funcion, numeros):
+    pares = []
+    for i in numeros:
+        if funcion(i) == True:
+            pares.append(i)
+    return pares
+
+lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+print (devolver_numeros_pares(numero_par, lista))
+
+'''
+
+# Escribir una función que reciba una frase y devuelva un diccionario con las palabras que contiene y su 
+# longitud.
+
+'''
+
+def palabras_y_longitud(frase):
+    palabras = {}
+    frase = frase.split()
+    for i in frase:
+        palabras[i] = len(i)
+    return palabras
+
+f = 'hola como estas'
+
+print (palabras_y_longitud(f)) 
+
+'''
+
+# Escribir una función reciba una lista de notas y devuelva la lista de calificaciones correspondientes a esas 
+# notas.
+
+# YO LO HICE CON DICCIONARIO EN LUGAR DE LISTA
+
+'''
+
+def calificaciones(notas):
+    for i in notas:
+        if notas[i] >= 6:
+            notas[i] = 'Aprobado'
+        else:
+            notas[i] = 'Desaprobado'
+    return notas
+
+n = {
+    'Matemáticas' : 6,
+    'Lengua' : 5,
+    'Historia' : 1,
+    'Geografía' : 7,
+    'Química' : 9,
+}
+
+print (calificaciones(n))
+
+'''
+
+# Escribir una función reciba un diccionario con las asignaturas y las notas de un alumno y devuelva otro 
+# diccionario con las asignaturas en mayúsculas y las calificaciones correspondientes a las notas.
+
+'''
+
+def calificaciones(notas):
+    calificaciones = {}
+    for i in notas:
+        if notas[i] >= 6:
+            calificaciones[i.upper()] = 'Aprobado'
+        else:
+            calificaciones[i.upper()] = 'Desaprobado'
+    return calificaciones
+
+n = {
+    'Matemáticas' : 6,
+    'Lengua' : 5,
+    'Historia' : 1,
+    'Geografía' : 7,
+    'Química' : 9,
+}
+
+print (calificaciones(n))
+
+'''
+
+# Escribir una función reciba un diccionario con las asignaturas y las notas de un alumno y devuelva otro 
+# diccionario con las asignaturas en mayúsculas y las calificaciones correspondientes a las notas aprobadas.
+
+'''
+
+def calificaciones(notas):
+    aprobadas = {}
+    for i in notas:
+        if notas[i] >= 6:
+            aprobadas[i.upper()] = notas[i]
+    return aprobadas
+
+n = {
+    'Matemáticas' : 6,
+    'Lengua' : 5,
+    'Historia' : 1,
+    'Geografía' : 7,
+    'Química' : 9,
+}
+
+print (calificaciones(n))
+
+'''
+
+# Una inmobiliaria de una ciudad maneja una lista de inmuebles como la siguiente:
+
+# [{'año': 2000, 'metros': 100, 'habitaciones': 3, 'garaje': True, 'zona': 'A'},
+# {'año': 2012, 'metros': 60, 'habitaciones': 2, 'garaje': True, 'zona': 'B'},
+# {'año': 1980, 'metros': 120, 'habitaciones': 4, 'garaje': False, 'zona': 'A'},
+# {'año': 2005, 'metros': 75, 'habitaciones': 3, 'garaje': True, 'zona': 'B'},
+# {'año': 2015, 'metros': 90, 'habitaciones': 2, 'garaje': False, 'zona': 'A'}]
+
+# Construir una función que permita hacer búsqueda de inmuebles en función de un presupuesto dado. La función
+# recibirá como entrada la lista de inmuebles y un precio, y devolverá otra lista con los inmuebles cuyo precio
+# sea menor o igual que el dado. Los inmuebles de la lista que se devuelva deben incorporar un nuevo par a cada
+# diccionario con el precio del inmueble, donde el precio de un inmueble se calcula con las siguiente fórmula
+# en función de la zona:
+
+# -  Zona A: precio = (metros * 1000 + habitaciones * 5000 + garaje * 15000) * (1-antiguedad/100)
+# -  Zona B: precio = (metros * 1000 + habitaciones * 5000 + garaje * 15000) * (1-antiguedad/100) * 1.5
+
+def calculo_zona(año, metros, habitaciones, garaje, zona):
+    if zona == 'A':
+        precio = (metros * 1000 + habitaciones * 5000 + garaje * 15000) * (1 - año / 100)
+        precio = round(precio, 2)
+    elif zona == 'B':
+        precio = (metros * 1000 + habitaciones * 5000 + garaje * 15000) * (1 - año / 100) * 1.5
+        precio = round(precio, 2)
+    return precio * (-1) 
+
+def busqueda_inmuebles(lista_inmuebles, precio):
+    
+
+inmuebles = [{'año': 2000, 'metros': 100, 'habitaciones': 3, 'garaje': True, 'zona': 'A'},
+{'año': 2012, 'metros': 60, 'habitaciones': 2, 'garaje': True, 'zona': 'B'},
+{'año': 1980, 'metros': 120, 'habitaciones': 4, 'garaje': False, 'zona': 'A'},
+{'año': 2005, 'metros': 75, 'habitaciones': 3, 'garaje': True, 'zona': 'B'},
+{'año': 2015, 'metros': 90, 'habitaciones': 2, 'garaje': False, 'zona': 'A'}]
