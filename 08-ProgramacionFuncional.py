@@ -250,16 +250,16 @@ def calculo_zona(año, metros, habitaciones, garaje, zona):
         precio = round(precio, 2)
     return precio * (-1) 
 
-def busqueda_inmuebles(lista_inmuebles):
+'''def busqueda_inmuebles(lista_inmuebles):
     precios = ''
     for dic in lista_inmuebles:
         print ('\r')
         for clave in dic:
-            valores = dic[clave], end=' '
+            valores = dic[clave]
             p = calculo_zona(valores)
             precios += str(p)
     return precios
-
+'''
 
 propiedad_1 = {
     'año': 2000, 
@@ -302,5 +302,10 @@ propiedad_5 = {
     }
 
 inmuebles = [propiedad_1, propiedad_2, propiedad_3, propiedad_4, propiedad_5]
+lista = []
 
-print(busqueda_inmuebles(inmuebles)) 
+for dic in inmuebles:
+    print ('\r')
+    for clave in dic:
+        valores = dic[clave]
+        lista.append(valores)
