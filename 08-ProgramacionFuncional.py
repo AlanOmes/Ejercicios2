@@ -241,6 +241,8 @@ print (calificaciones(n))
 # -  Zona A: precio = (metros * 1000 + habitaciones * 5000 + garaje * 15000) * (1-antiguedad/100)
 # -  Zona B: precio = (metros * 1000 + habitaciones * 5000 + garaje * 15000) * (1-antiguedad/100) * 1.5
 
+
+
 def calculo_zona(año, metros, habitaciones, garaje, zona):
     if zona == 'A':
         precio = (metros * 1000 + habitaciones * 5000 + garaje * 15000) * (1 - año / 100)
@@ -250,7 +252,7 @@ def calculo_zona(año, metros, habitaciones, garaje, zona):
         precio = round(precio, 2)
     return precio * (-1) 
 
-'''def busqueda_inmuebles(lista_inmuebles):
+def busqueda_inmuebles(lista_inmuebles):
     precios = ''
     for dic in lista_inmuebles:
         print ('\r')
@@ -258,54 +260,29 @@ def calculo_zona(año, metros, habitaciones, garaje, zona):
             valores = dic[clave]
             p = calculo_zona(valores)
             precios += str(p)
-    return precios
-'''
+    return precio
 
-propiedad_1 = {
-    'año': 2000, 
-    'metros': 100, 
-    'habitaciones': 3, 
-    'garaje': True, 
-    'zona': 'A',
-    }
 
-propiedad_2 = {
-    'año': 2012,
-    'metros': 60,
-    'habitaciones': 2, 
-    'garaje': True, 
-    'zona': 'B',
-    }
-    
-propiedad_3 = {
-    'año': 1980, 
-    'metros': 120, 
-    'habitaciones': 4, 
-    'garaje': False, 
-    'zona': 'A',
-    }
+inmuebles = [
+{'año': 2000, 'metros': 100, 'habitaciones': 3, 'garaje': True, 'zona': 'A'},
+{'año': 2012, 'metros': 60, 'habitaciones': 2, 'garaje': True, 'zona': 'B'},
+{'año': 1980, 'metros': 120, 'habitaciones': 4, 'garaje': False, 'zona': 'A'},
+{'año': 2005, 'metros': 75, 'habitaciones': 3, 'garaje': True, 'zona': 'B'},
+{'año': 2015, 'metros': 90, 'habitaciones': 2, 'garaje': False, 'zona': 'A'}]
 
-propiedad_4 = {
-    'año': 2005, 
-    'metros': 75, 
-    'habitaciones': 3, 
-    'garaje': True, 
-    'zona': 'B',
-    }
-
-propiedad_5 = {
-    'año': 2015, 
-    'metros': 90, 
-    'habitaciones': 2, 
-    'garaje': False, 
-    'zona': 'A',
-    }
-
-inmuebles = [propiedad_1, propiedad_2, propiedad_3, propiedad_4, propiedad_5]
-lista = []
-
-for dic in inmuebles:
+for i in range(len(inmuebles)):
     print ('\r')
-    for clave in dic:
-        valores = dic[clave]
-        lista.append(valores)
+    for clave in inmuebles[i]:
+        print (clave, end= ' ') 
+
+
+
+'''dic = {
+    'pene' : 3,
+    'cajeta' : {'a' : 123, 'b' : 3444},
+    'nariz' : 44,
+    }
+
+print (dic['cajeta']['b'])  
+
+'''
