@@ -1,38 +1,38 @@
-# Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química, 
+# Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matematicas, Fisica, Quimica, 
 # Historia y Lengua) en una lista y la muestre por pantalla.
 
 '''
 
-lista = ['Matemáticas', 'Física', 'Química', 'Historia', 'Lengua']
+lista = ['Matematicas', 'Fisica', 'Quimica', 'Historia', 'Lengua']
 print (lista)
 
 '''
 
-# Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química,
+# Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matematicas, Fisica, Quimica,
 # Historia y Lengua) en una lista y la muestre por pantalla el mensaje Yo estudio <asignatura>, donde 
 # <asignatura> es cada una de las asignaturas de la lista.
 
 '''
 
-lista = ['Matemáticas', 'Física', 'Química', 'Historia', 'Lengua']
+lista = ['Matematicas', 'Fisica', 'Quimica', 'Historia', 'Lengua']
 
 for i in lista:
     print (f'Yo estudio {i}' )
 
 '''
 
-# Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química, 
-# Historia y Lengua) en una lista, pregunte al usuario la nota que ha sacado en cada asignatura, y después las
+# Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matematicas, Fisica, Quimica, 
+# Historia y Lengua) en una lista, pregunte al usuario la nota que ha sacado en cada asignatura, y despues las
 # muestre por pantalla con el mensaje En <asignatura> has sacado <nota> donde <asignatura> es cada una des las
 # asignaturas de la lista y <nota> cada una de las correspondientes notas introducidas por el usuario.
 
 '''
 
-materias = ['Matemáticas', 'Física', 'Química', 'Historia', 'Lengua']
+materias = ['Matematicas', 'Fisica', 'Quimica', 'Historia', 'Lengua']
 notas = []
 
 for i in range(len(materias)):
-    p = int (input (f'¿Qué nota sacaste en {materias[i]}?: '))
+    p = int (input (f'¿Que nota sacaste en {materias[i]}?: '))
     notas.append(p)
 
 print ('\r')
@@ -42,17 +42,17 @@ for i in range (len(materias)):
 
 '''
 
-# Escribir un programa que pregunte al usuario los números ganadores de la lotería primitiva, los almacene en
+# Escribir un programa que pregunte al usuario los numeros ganadores de la loteria primitiva, los almacene en
 # una lista y los muestre por pantalla ordenados de menor a mayor.
 
 '''
 
 lista = []
 
-cant = int (input ('Escriba la cantidad de números que va a ingresar: '))
+cant = int (input ('Escriba la cantidad de numeros que va a ingresar: '))
 
 for i in range (cant):
-    p = int (input ('Ingrese los números ganadores de la lotería: '))
+    p = int (input ('Ingrese los numeros ganadores de la loteria: '))
     lista.append(p)
 
 print ('\r')
@@ -68,7 +68,7 @@ lista2 = []
 preguntar = True
 
 while preguntar:
-    c = (input ('Ingrese los números ganadores de la lotería (escriba "f" para finalizar): '))
+    c = (input ('Ingrese los numeros ganadores de la loteria (escriba "f" para finalizar): '))
     if c == 'f':
         preguntar = False
     else:
@@ -81,7 +81,7 @@ print (lista2)
 
 '''
 
-# Escribir un programa que almacene en una lista los números del 1 al 10 y los muestre por pantalla en orden
+# Escribir un programa que almacene en una lista los numeros del 1 al 10 y los muestre por pantalla en orden
 # inverso separados por comas.
 
 '''
@@ -103,18 +103,18 @@ for i in numeros:
 
 '''
 
-# Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matemáticas, Física, Química,
+# Escribir un programa que almacene las asignaturas de un curso (por ejemplo Matematicas, Fisica, Quimica,
 # Historia y Lengua) en una lista, pregunte al usuario la nota que ha sacado en cada asignatura y elimine de la
 # lista las asignaturas aprobadas. Al final el programa debe mostrar por pantalla las asignaturas que el
 # usuario tiene que repetir.
 
 '''
 
-materias = ['Matemáticas', 'Física', 'Química', 'Historia', 'Lengua']
+materias = ['Matematicas', 'Fisica', 'Quimica', 'Historia', 'Lengua']
 r = []
 
 for i in range (len(materias)):
-    n = int (input (f'¿Cuánto sacaste en {materias[i]}?: '))
+    n = int (input (f'¿Cuanto sacaste en {materias[i]}?: '))
     if n <= 5:
         r.append(materias[i])
 
@@ -126,7 +126,7 @@ for i in range (len(r)):
 '''
 
 # Escribir un programa que almacene el abecedario en una lista, elimine de la lista las letras que ocupen
-# posiciones múltiplos de 3, y muestre por pantalla la lista resultante.
+# posiciones multiplos de 3, y muestre por pantalla la lista resultante.
 
 '''
 
@@ -140,7 +140,7 @@ print (abc)
 
 '''
 
-# Escribir un programa que pida al usuario una palabra y muestre por pantalla si es un palíndromo.
+# Escribir un programa que pida al usuario una palabra y muestre por pantalla si es un palindromo.
 
 '''
 
@@ -148,13 +148,13 @@ p = input ('Escriba una palabra: ')
 p = list(p)
 
 if p == (p[::-1]):
-    print ('La palabra es palíndroma.')
+    print ('La palabra es palindroma.')
 else:
-    print ('No es palíndroma.')
+    print ('No es palindroma.')
 
 '''
 
-# Escribir un programa que pida al usuario una palabra y muestre por pantalla el número de veces que contiene 
+# Escribir un programa que pida al usuario una palabra y muestre por pantalla el numero de veces que contiene 
 # cada vocal.
 
 '''
